@@ -1,4 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
+import { Link } from "react-router-dom";
 
 const PERSON_LIST = gql`
   query GetPersonList {
@@ -24,14 +25,13 @@ function PersonList() {
   if (error) return <p>Error :(</p>;
 
   return data.allPeople.edges.map(({ node }) => (
-    <div key={node.id}>
-      <div className="person-cell">
-        
+    <div className="person-cell" key={node.id}>
+      <Link to = { `/person/${node.id}` }>
         <h2>{node.name}</h2>
         <p>{node.gender === 'n/a' ? 'Droid' : 'Human'} from {node.homeworld.name}</p>
-      </div>
-      
+      </Link>
     </div>
+    
   ));
 }
 
