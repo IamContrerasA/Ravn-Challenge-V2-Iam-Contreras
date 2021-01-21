@@ -1,5 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import PersonList from './PersonList.js'
+import NavBar from './NavBar.js';
+import SideBar from './SideBar.js';
 
 function App() {
   const client = new ApolloClient({
@@ -9,8 +10,10 @@ function App() {
     
   return (
     <ApolloProvider client={client}>
-      <h1>Person List</h1>
-      <PersonList />      
+      <div className="App">
+        <NavBar />        
+        <SideBar />
+      </div>
     </ApolloProvider>
     
   );
