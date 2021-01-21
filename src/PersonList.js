@@ -7,6 +7,10 @@ const PERSON_LIST = gql`
         node{
           id
           name
+          gender
+          homeworld {           
+            name
+          }
         }
       }
     }
@@ -21,9 +25,12 @@ function PersonList() {
 
   return data.allPeople.edges.map(({ node }) => (
     <div key={node.id}>
-      <p>
-        {node.id}: {node.name}
-      </p>
+      <div className="person-cell">
+        
+        <h2>{node.name}</h2>
+        <p>{node.gender === 'n/a' ? 'Droid' : 'Human'} from {node.homeworld.name}</p>
+      </div>
+      
     </div>
   ));
 }
