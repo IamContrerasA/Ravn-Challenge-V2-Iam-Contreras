@@ -2,6 +2,10 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.h2{
+  font-size: 17pt;
+}
+
 .navbar {
   background-color: #121212;
   height: 60px;
@@ -34,4 +38,22 @@ body {
   margin-left: 320px; 
   font-size: 28px; 
   margin-top: 60px;
+}
+
+/* PersonCell */
+
+.person-cell{  
+  border-bottom: 1px solid #828282;
+  
+}
+
+.person-cell p { 
+  font-size: 17px;
+  color: #828282;
+  margin-TOP: 0;
+}
+
+.person-cell h2{ 
+  font-size: 17px;
+  margin-BOTTOM: 0;
 }
