@@ -2,7 +2,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar.js';
 import SideBar from './SideBar.js';
-import PersonDetail from './PersonDetails.js';
+import PersonDetails from './PersonDetails.js';
 
 function App() {
   const client = new ApolloClient({
@@ -18,7 +18,7 @@ function App() {
           <SideBar />
           <Switch>
             <Route path="/person/:id"> 
-              <PersonDetail />
+              <PersonDetails />
             </Route>
           </Switch>
         </div>
