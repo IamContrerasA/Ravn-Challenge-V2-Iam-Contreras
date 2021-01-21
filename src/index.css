@@ -34,15 +34,6 @@ body {
   padding-left: 20px;
 }
 
-.content{
-  margin-left: 360px; 
-  font-size: 28px; 
-  margin-top: 120px; 
-  
-  border: 3px solid #828282;
-  padding: 10px;
-}
-
 /* PersonCell */
 
 .person-cell{  
@@ -63,4 +54,39 @@ body {
 
 .person-cell a{
   text-decoration: none;
+}
+
+/* Content */
+.content{
+  margin-left: 480px; 
+  margin-right: 120px; 
+  font-size: 14px; 
+  margin-top: 90px;     
+}
+
+/* DataCell */
+.section-header{
+  color: #121212;
+  margin-top: 32px;
+  margin-BOTTOM: 64px;
+}
+
+.data-cell h2{
+  display: inline-block;
+}
+
+.data-cell hr{
+  clear:both;
+}
+
+.data-cell .field{
+  color: #828282;  
+  text-align:left;
+  float:left;
+}
+
+.data-cell .value{
+  color: #121212;
+  text-align:right;
+  float:right;  
 }
