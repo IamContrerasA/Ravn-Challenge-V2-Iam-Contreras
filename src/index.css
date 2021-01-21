@@ -35,16 +35,18 @@ body {
 }
 
 .content{
-  margin-left: 320px; 
+  margin-left: 360px; 
   font-size: 28px; 
-  margin-top: 60px;
+  margin-top: 120px; 
+  
+  border: 3px solid #828282;
+  padding: 10px;
 }
 
 /* PersonCell */
 
 .person-cell{  
   border-bottom: 1px solid #828282;
-  
 }
 
 .person-cell p { 
@@ -55,5 +57,10 @@ body {
 
 .person-cell h2{ 
   font-size: 17px;
+  color: #121212;
   margin-BOTTOM: 0;
+}
+
+.person-cell a{
+  text-decoration: none;
 }
