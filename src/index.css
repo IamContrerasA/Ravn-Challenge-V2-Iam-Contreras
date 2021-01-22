@@ -90,3 +90,23 @@ body {
   text-align:right;
   float:right;  
 }
+
+/* Default icon formatting */
+i {
+  display: inline-block;
+  font-style: normal;
+  position: relative;
+}
+
+/* Additional formatting for arrow icon */
+i.arrow {
+  /* top: 2pt; Uncomment this to lower the icons as requested in comments*/
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 0.2em solid black;
+  border-top: 0.2em solid black;
+  transform: rotate(45deg);
+  text-align:right;
+  float:right;
+  margin-right: 10px;
+}

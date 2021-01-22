@@ -27,8 +27,11 @@ function PersonList() {
   return data.allPeople.edges.map(({ node }) => (
     <div className="person-cell" key={node.id}>
       <Link to = { `/person/${node.id}` }>
-        <h2>{node.name}</h2>
-        <p>{node.gender === 'n/a' ? 'Droid' : 'Human'} from {node.homeworld.name}</p>
+        <h2>{node.name} </h2>
+        <p>
+          {node.gender === 'n/a' ? 'Droid' : 'Human'} from {node.homeworld.name}
+          <i className="arrow" title="arrow icon"></i>
+        </p>        
       </Link>
     </div>
     
