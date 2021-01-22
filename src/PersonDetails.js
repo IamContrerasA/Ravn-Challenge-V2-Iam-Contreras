@@ -55,15 +55,17 @@ const PersonDetails = () => {
         </div>
       </div>
 
-      <div className="section-header">
-        <h2>Vehicles</h2>
-        {data.person.vehicleConnection.edges.map(({ node }) => (
-        <div className="data-cell" key={node.id}>
-          <h2 className="field">{node.name}</h2>
-          <hr/>
+      { Boolean(data.person.vehicleConnection.edges.length) && (
+        <div className="section-header">
+          <h2>Vehicles</h2>
+          {data.person.vehicleConnection.edges.map(({ node }) => (
+          <div className="data-cell" key={node.id}>
+            <h2 className="field">{node.name}</h2>
+            <hr/>
+          </div>
+          ))}
         </div>
-        ))}
-      </div>
+      )}
     </div>
     
   );
