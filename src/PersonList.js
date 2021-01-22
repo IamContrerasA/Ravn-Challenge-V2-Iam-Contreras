@@ -21,8 +21,8 @@ const PERSON_LIST = gql`
 function PersonList() {
   const { loading, error, data } = useQuery(PERSON_LIST);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <h2 className="loading-cell">Loading</h2>;
+  if (error) return <h2 className="notice-cell">Failed to Load Data</h2>;
 
   return data.allPeople.edges.map(({ node }) => (
     <div className="person-cell" key={node.id}>

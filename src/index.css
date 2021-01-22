@@ -41,13 +41,13 @@ body {
 }
 
 .person-cell p { 
-  font-size: 17px;
+  font-size: 14pt;
   color: #828282;
   margin-TOP: 0;
 }
 
 .person-cell h2{ 
-  font-size: 17px;
+  font-size: 17pt;
   color: #121212;
   margin-BOTTOM: 0;
 }
@@ -60,7 +60,7 @@ body {
 .content{
   margin-left: 480px; 
   margin-right: 120px; 
-  font-size: 14px; 
+  font-size: 17pt; 
   margin-top: 90px;     
 }
 
@@ -91,7 +91,7 @@ body {
   float:right;  
 }
 
-/* Default icon formatting */
+/* Arrow Icon */
 i {
   display: inline-block;
   font-style: normal;
@@ -99,8 +99,7 @@ i {
 }
 
 /* Additional formatting for arrow icon */
-i.arrow {
-  /* top: 2pt; Uncomment this to lower the icons as requested in comments*/
+i.arrow {  
   width: 0.4em;
   height: 0.4em;
   border-right: 0.2em solid black;
@@ -109,4 +108,17 @@ i.arrow {
   text-align:right;
   float:right;
   margin-right: 10px;
+}
+
+/* NoticeCell */
+
+.notice-cell{
+  color:#EC5757;
+  text-align: center;
+}
+
+/* LoadingCell */
+.loading-cell{
+  color:#828282;
+  text-align: center;
 }
