@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
 import { Link } from "react-router-dom";
+import Spinner from './Spinner.js';
 
 const PERSON_LIST = gql`
   query GetPersonList {
@@ -20,8 +21,7 @@ const PERSON_LIST = gql`
 
 function PersonList() {
   const { loading, error, data } = useQuery(PERSON_LIST);
-
-  if (loading) return <h2 className="loading-cell">Loading</h2>;
+  if (loading) return <Spinner />
   if (error) return <h2 className="notice-cell">Failed to Load Data</h2>;
 
   return data.allPeople.edges.map(({ node }) => (

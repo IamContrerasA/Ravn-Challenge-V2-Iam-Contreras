@@ -60,7 +60,6 @@ body {
 .content{
   margin-left: 480px; 
   margin-right: 120px; 
-  font-size: 17pt; 
   margin-top: 90px;     
 }
 
@@ -114,11 +113,5 @@ i.arrow {
 
 .notice-cell{
   color:#EC5757;
-  text-align: center;
-}
-
-/* LoadingCell */
-.loading-cell{
-  color:#828282;
   text-align: center;
 }

@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from "react-router-dom";
+import Spinner from './Spinner';
 
 const PersonDetails = () => {
   const { id } = useParams()
@@ -26,8 +27,8 @@ const PersonDetails = () => {
   
   const { loading, error, data } = useQuery(PERSON_DETAILS);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <Spinner />;
+  if (error) return <h2 className="notice-cell">Failed to Load Data</h2>;
 
   return (
     <div className="content" key={data.person.id}>
