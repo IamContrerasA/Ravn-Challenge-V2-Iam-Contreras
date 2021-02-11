@@ -3,11 +3,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './js/NavBar.js';
 import SideBar from './js/SideBar.js';
 import PersonDetails from './js/PersonDetails.js';
+import { relayStylePagination } from "@apollo/client/utilities";
 
 function App() {
   const client = new ApolloClient({
     uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
-    cache: new InMemoryCache()
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            allPeople: relayStylePagination(),
+          },
+        },
+      },
+    })
   });
     
   return (

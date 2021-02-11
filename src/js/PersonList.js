@@ -1,10 +1,10 @@
 import { useQuery, gql } from '@apollo/client';
-import { Link } from "react-router-dom";
 import Spinner from './Spinner.js';
+import Persons from './Persons';
 
 const PERSON_LIST = gql`
-  query GetPersonList {
-    allPeople{
+  query GetPersonList($cursor: String) {
+    allPeople(first: 5, after: $cursor){
       edges{
         node{
           id
@@ -15,27 +15,38 @@ const PERSON_LIST = gql`
           }
         }
       }
+      pageInfo{
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
     }
   }
 `;
 
 function PersonList() {
-  const { loading, error, data } = useQuery(PERSON_LIST);
+  const { loading, error, data, fetchMore } = useQuery(PERSON_LIST);
   if (loading) return <Spinner />
   if (error) return <h2 className="notice-cell">Failed to Load Data</h2>;
 
-  return data.allPeople.edges.map(({ node }) => (
-    <div className="person-cell" key={node.id}>
-      <Link to = { `/person/${node.id}` }>
-        <h2>{node.name} </h2>
-        <p>
-          {node.gender === 'n/a' ? 'Droid' : 'Human'} from {node.homeworld.name}
-          <i className="arrow" title="arrow icon"></i>
-        </p>        
-      </Link>
-    </div>
-    
-  ));
+  const nodes = data.allPeople.edges.map((edge) => edge.node);
+  const pageInfo = data.allPeople.pageInfo;
+  
+  return (
+    <Persons      
+      entries={nodes}
+      onLoadMore={() => {
+        if (pageInfo.hasNextPage) {
+          fetchMore({
+            variables: {
+              cursor: data.allPeople.pageInfo.endCursor,
+            },            
+          });
+        }
+      }}
+    />
+  );
 }
 
 export default PersonList;
